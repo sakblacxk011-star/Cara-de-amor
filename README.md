@@ -1,7 +1,25 @@
-# ¡Haz que tu Crush se Enamore con este Proyecto en HTML, CSS y JS! 💕😱
-### Video del tutorial: [https://youtu.be/G39TzJRPt-M](https://youtu.be/G39TzJRPt-M)
-
 ![image](https://github.com/user-attachments/assets/2e2636d8-accb-48ba-9740-693050696ba1)
 ![image](https://github.com/user-attachments/assets/51ce2674-51d2-45b8-bd0c-5e98f739980a)
 ![image](https://github.com/user-attachments/assets/d26877f8-9193-4e26-a363-8f02eaa6f45c)
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>me amas amorcito ?</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="2871482820979272488" data-share-method="host" data-aspect-ratio="1.28351" data-width="100%"><a href="https://tenor.com/view/mochi-pet-mochi-cat-cute-squiddy-gif-2871482820979272488">Mochi Pet GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1>¿me amas amorcito 
+          
+        ? 🥰</h1>
+        <p>Eres la persona mas especial del mundo</p>
+        <div class="btn">
+            <a href="si.html">SI</a>
+            <a href="no1.html">NO</a>
+        </div>
+    </div>
+</body>
+</html>
