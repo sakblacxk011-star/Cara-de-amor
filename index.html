@@ -1,20 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Te gustaria salir conmigo?</title>
+<meta charset="UTF-8">
+<title>Dileancito 💖 San Valentín</title>
+
+<style>
+body{
+  background: linear-gradient(135deg,#ff4d6d,#ff9a9e);
+  font-family: Arial, sans-serif;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+}
+
+.card{
+  background:#1e1e2f;
+  border-radius:25px;
+  padding:30px;
+  max-width:520px;
+  margin:60px auto;
+  box-shadow:0 0 30px rgba(0,0,0,.6);
+  position:relative;
+  z-index:2;
+}
+
+h1{font-size:2.3em;}
+p{font-size:1.1em;}
+
+button{
+  border:none;
+  border-radius:20px;
+  padding:16px 32px;
+  font-size:1.2em;
+  cursor:pointer;
+  margin:15px;
+  transition:.3s;
+}
+
+#yesBtn{
+  background:#ffcc00;
+  color:#1e1e2f;
+  font-weight:bold;
+}
+
+#noBtn{
+  background:#ff6b6b;
+  color:white;
+  position:absolute;
+}
+
+.note{
+  margin-top:20px;
+  font-style:italic;
+  color:#ffd6e0;
+  min-height:30px;
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:24px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-110vh);opacity:0;}
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="tenor-gif-embed" data-postid="2871482820979272488" data-share-method="host" data-aspect-ratio="1.28351" data-width="100%"><a href="https://tenor.com/view/mochi-pet-mochi-cat-cute-squiddy-gif-2871482820979272488">Mochi Pet GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        <h1>¿Te gustaria salir conmigo? 🥰</h1>
-        <p>Eres la persona mas especial del mundo</p>
-        <div class="btn">
-            <a href="si.html">SI</a>
-            <a href="no1.html">NO</a>
-        </div>
-    </div>
+
+<div class="card">
+  <h1>👑 Dileancito 👑</h1>
+  <p>Guapo, precioso… 💖</p>
+  <p><strong>¿Quieres ser mi San Valentín?</strong></p>
+  <p>Edición Clash Royale legendaria 👑💘</p>
+
+  <button id="yesBtn">SÍ 💖</button>
+  <button id="noBtn">NO 😐</button>
+
+  <div class="note" id="note"></div>
+</div>
+
+<audio id="sound">
+  <source src="https://www.myinstants.com/media/sounds/anime-wow.mp3">
+</audio>
+
+<script>
+let scale=1;
+const yes=document.getElementById("yesBtn");
+const no=document.getElementById("noBtn");
+const note=document.getElementById("note");
+const sound=document.getElementById("sound");
+
+const notes=[
+ "¿Ni por Checo, guapo? 🏎️💔",
+ "Nos la vamos a pasar increíble 😏💖",
+ "Imagínanos jugando Clash juntos 👑",
+ "No seas cruel, precioso 😭",
+ "Victoria segura si dices que sí 🏆❤️",
+ "El rey ya aceptó… 👑😌",
+ "San Valentín contigo = felicidad 💘"
+];
+
+no.addEventListener("mouseover",()=>{
+  const x=Math.random()*300;
+  const y=Math.random()*300;
+  no.style.transform=`translate(${x}px,${y}px)`;
+});
+
+no.addEventListener("click",()=>{
+  scale+=0.3;
+  yes.style.transform=`scale(${scale})`;
+  note.textContent=notes[Math.floor(Math.random()*notes.length)];
+  sound.play();
+});
+
+yes.addEventListener("click",()=>{
+  document.body.innerHTML=`
+    <h1>💖 SABÍA QUE DIRÍAS QUE SÍ 💖</h1>
+    <p>Dileancito, oficialmente mi San Valentín 👑😘</p>
+    <p>Guapo. Precioso. MÍO 💘</p>
+    <div style="font-size:2em;">❤️‍🔥👑💖👑❤️‍🔥</div>
+  `;
+});
+
+// corazones flotando
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  h.textContent=Math.random()>0.5?"💖":"❤️‍🔥";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},400);
+</script>
+
 </body>
 </html>
